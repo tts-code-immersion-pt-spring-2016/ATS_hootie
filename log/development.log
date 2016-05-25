@@ -1847,3 +1847,545 @@ Processing by TweetsController#index as HTML
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
   Rendered tweets/index.html.erb within layouts/application (4.6ms)
 Completed 200 OK in 71ms (Views: 69.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2016-05-25 19:35:30 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTweet Load (1.5ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tweets/index.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 849ms (Views: 757.5ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:35:32 -0400
+
+
+Started GET "/assets/profiles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:35:32 -0400
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:35:32 -0400
+
+
+Started GET "/assets/profiles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:35:32 -0400
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:35:32 -0400
+
+
+Started GET "/assets/relationships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:35:32 -0400
+
+
+Started GET "/tweets/2" for ::1 at 2016-05-25 19:35:34 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTweet Load (0.2ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered tweets/show.html.erb within layouts/application (11.4ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Missing partial shared/__likes with {:locale=>[:en], :formats=>[:html, :xml], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/seeps1/Desktop/tts/ATS_hootie/app/views"
+  * "/Users/seeps1/.rvm/gems/ruby-2.2.4/gems/devise-3.5.4/app/views"
+):
+    14: 
+    15: <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+    16: <%= link_to 'Back', tweets_path %>
+    17: <%= render "shared/_likes" %>
+  app/views/tweets/show.html.erb:17:in `_app_views_tweets_show_html_erb___827785552673059056_70255797208640'
+
+
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.7ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.5ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (68.6ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (127.3ms)
+
+
+Started GET "/tweets/2" for ::1 at 2016-05-25 19:35:35 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tweets/show.html.erb within layouts/application (5.3ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (Missing partial shared/__likes with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "/Users/seeps1/Desktop/tts/ATS_hootie/app/views"
+  * "/Users/seeps1/.rvm/gems/ruby-2.2.4/gems/devise-3.5.4/app/views"
+):
+    14: 
+    15: <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+    16: <%= link_to 'Back', tweets_path %>
+    17: <%= render "shared/_likes" %>
+  app/views/tweets/show.html.erb:17:in `_app_views_tweets_show_html_erb___827785552673059056_70255799017780'
+
+
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (52.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (48.1ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.7ms)
+
+
+Started GET "/tweets/2" for ::1 at 2016-05-25 19:35:50 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  Rendered shared/_likes.html.erb (26.1ms)
+  Rendered tweets/show.html.erb within layouts/application (29.4ms)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.8ms)
+
+ActionView::Template::Error (undefined local variable or method `tweet' for #<#<Class:0x007fcb649cb260>:0x007fcb633c4de0>):
+    4:  <%= link_to "Like", tweet_like_path(@tweet), method: :post %>
+    5:  <% end %>
+    6: 
+    7:  <%= tweet.likes.count %>
+    8: 
+    9:  Liked by:
+   10:   <% @tweet.likes.each do |like| %>
+  app/views/shared/_likes.html.erb:7:in `_app_views_shared__likes_html_erb___4119309408067925727_70255783971000'
+  app/views/tweets/show.html.erb:17:in `_app_views_tweets_show_html_erb___827785552673059056_70255784887900'
+
+
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.5ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (47.7ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (102.4ms)
+
+
+Started GET "/tweets/2" for ::1 at 2016-05-25 19:36:28 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 2]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 2]]
+  Rendered shared/_likes.html.erb (4.3ms)
+  Rendered tweets/show.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 64ms (Views: 61.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/profiles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/application.self-c130522e3eb2da4941356a2a13b05cf17707767f3e691e6a4f50044833a9a916.css?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/profiles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/relationships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/tweets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-25 19:36:29 -0400
+
+
+Started DELETE "/tweets/2/like" for ::1 at 2016-05-25 19:36:36 -0400
+
+SyntaxError (/Users/seeps1/Desktop/tts/ATS_hootie/app/controllers/likes_controller.rb:30: syntax error, unexpected keyword_end, expecting end-of-input):
+  app/controllers/likes_controller.rb:30: syntax error, unexpected keyword_end, expecting end-of-input
+
+
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (10.1ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (61.9ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (45.7ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/seeps1/.rvm/gems/ruby-2.2.4/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (97.9ms)
+
+
+Started GET "/tweets/2/" for ::1 at 2016-05-25 19:37:23 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 2]]
+  [1m[36mLike Load (0.2ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 2]]
+  Rendered shared/_likes.html.erb (10.7ms)
+  Rendered tweets/show.html.erb within layouts/application (14.9ms)
+Completed 200 OK in 107ms (Views: 82.9ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/tweets/2/like" for ::1 at 2016-05-25 19:37:26 -0400
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7JthITQgKTgZLnMEwmrAH9N5S1GZ2EEw9VstYCJKki2iHxPt/vE295Gp3WzZZq7edE23/JXPFE2UkdEH+w7GkQ==", "tweet_id"=>"2"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ? AND "likes"."user_id" = ?  [["tweet_id", 2], ["user_id", 2]]
+Redirected to http://localhost:3000/tweets/2/
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/tweets/2/" for ::1 at 2016-05-25 19:37:26 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?  [["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 2]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 2]]
+  Rendered shared/_likes.html.erb (2.0ms)
+  Rendered tweets/show.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 60ms (Views: 58.3ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/tweets/2/like" for ::1 at 2016-05-25 19:37:29 -0400
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"1MzhHfHe4eXNzahPEAniCYKoykZEM+RCC/2omJQ7lCyaSJPROw/+KkVKBicLBYzIJZw260gksT9qN1T/TX/AkA==", "tweet_id"=>"2"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ? AND "likes"."user_id" = ?[0m  [["tweet_id", 2], ["user_id", 2]]
+Redirected to http://localhost:3000/tweets/2/
+Completed 302 Found in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/tweets/2/" for ::1 at 2016-05-25 19:37:29 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 2]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 2]]
+  Rendered shared/_likes.html.erb (2.6ms)
+  Rendered tweets/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 58ms (Views: 56.4ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/tweets/2/like" for ::1 at 2016-05-25 19:37:31 -0400
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ulN0B5surU4J6MdhPjTRJfdqjxpVRS+Wvyfybyo+JDT01wbLUf+ygYFvaQklOL/kUF5zt1lSeuve7Q4I83pwiA==", "tweet_id"=>"2"}
+  [1m[35mTweet Load (0.2ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ? AND "likes"."user_id" = ?  [["tweet_id", 2], ["user_id", 2]]
+Redirected to http://localhost:3000/tweets/2/
+Completed 302 Found in 4ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/tweets/2/" for ::1 at 2016-05-25 19:37:31 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?  [["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 2]]
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 2]]
+  Rendered shared/_likes.html.erb (1.6ms)
+  Rendered tweets/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 52ms (Views: 50.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/tweets/2" for ::1 at 2016-05-25 19:37:55 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mTweet Load (0.2ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 2]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 2]]
+  Rendered shared/_likes.html.erb (15.8ms)
+  Rendered tweets/show.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 586ms (Views: 530.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/tweets" for ::1 at 2016-05-25 19:38:43 -0400
+Processing by TweetsController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT "tweets".* FROM "tweets"[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered tweets/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 57ms (Views: 53.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/tweets/1" for ::1 at 2016-05-25 19:38:45 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?[0m  [["user_id", 2]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 1]]
+  [1m[36mLike Load (0.1ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 1]]
+  Rendered shared/_likes.html.erb (3.5ms)
+  Rendered tweets/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 74ms (Views: 71.3ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/tweets/1/like" for ::1 at 2016-05-25 19:40:06 -0400
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5e5aae/SHKxoGoMOYfKuHNqAuvo9+mMOu8ZrREjnmGKraiilJQMDY+CdLWZ6/sDdfbRGVzHtNnPaDJcjkaPM3g==", "tweet_id"=>"1"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ? AND "likes"."user_id" = ?  [["tweet_id", 1], ["user_id", 2]]
+Redirected to http://localhost:3000/tweets/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/tweets/1" for ::1 at 2016-05-25 19:40:06 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."user_id" = ?  [["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 1]]
+  [1m[35mLike Load (0.0ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 1]]
+  Rendered shared/_likes.html.erb (2.0ms)
+  Rendered tweets/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 64ms (Views: 61.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/tweets/1" for ::1 at 2016-05-25 19:41:17 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ? AND "likes"."user_id" = ?  [["tweet_id", 1], ["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 1]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 1]]
+  Rendered shared/_likes.html.erb (3.3ms)
+  Rendered tweets/show.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 56ms (Views: 52.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/likes.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/profiles.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/application.self-c130522e3eb2da4941356a2a13b05cf17707767f3e691e6a4f50044833a9a916.css?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/relationships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/alert.self-d8b7bd612b3dcfdefb7b5539b9d5848d66ccbd3e7af8bb8d48bfb3288aaa7be8.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/affix.self-3555752f8a930795ee9e56751a52e6871104ae85d01b3ab8363da3802a5ecc78.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/tweets.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/button.self-e74d33ba39500940a78d6fa4d2d64f6ca7fd86d60a2149641f7fde7ba711d8a1.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/collapse.self-056c40532d9f0f126ec17e839f60c942f573fbd61a086e7f156306e3fc5e8c1f.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/modal.self-62463080dba6b9d024ff0a3192da0e76eacbc683194f3395047c6f5cfa0acb59.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/dropdown.self-e56c2ffee4618411d43ecf15c89273f6223847ad756e1cd17545d04afa732ed4.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/scrollspy.self-52afd90e8ba97d9f08617a13986e8869d6c4a45751c0bff59a6f91241e722aca.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/carousel.self-35d204878d906298e55bc24553e11fd89b980fc4ffe5792fe36af8c0da289c54.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/transition.self-3b268d4cd8c79e46ded7392885f72f64ffb5b0d49948a12b8cf9779f6163e13a.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/tab.self-dad0d5c377f9fae26394484535ebb23ccf68afae084f896af6ea4cdf8c9f6ae0.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/tooltip.self-facdc69246a072acb927ded77ff655f7c27a518b9357fddd45d119fbc8a0ab9f.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap/popover.self-210cff1fb4b72b71a29b5122180cb5937c8145cd13a934dc838280f1d9607a3e.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/likes.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/profiles.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/relationships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/tweets.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for ::1 at 2016-05-25 19:41:18 -0400
+
+
+Started POST "/tweets/1/like" for ::1 at 2016-05-25 19:41:20 -0400
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"th9MkFKSw+PNdU5Pl1b+jTk+Bgmt2SgJwakIm6qSCIn4mz5cmEPcLEXy4CeMWpBMngr6pKHOfXSgY/T8c9ZcNQ==", "tweet_id"=>"1"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mLike Load (0.5ms)[0m  [1mSELECT  "likes".* FROM "likes" WHERE "likes"."tweet_id" = ? AND "likes"."user_id" = ?  ORDER BY "likes"."id" ASC LIMIT 1[0m  [["tweet_id", 1], ["user_id", 2]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "likes" ("tweet_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["tweet_id", 1], ["user_id", 2], ["created_at", "2016-05-25 23:41:20.538423"], ["updated_at", "2016-05-25 23:41:20.538423"]]
+  [1m[35m (0.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/tweets/1
+Completed 302 Found in 16ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/tweets/1" for ::1 at 2016-05-25 19:41:20 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTweet Load (0.1ms)[0m  [1mSELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 2]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ? AND "likes"."user_id" = ?  [["tweet_id", 1], ["user_id", 2]]
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 1]]
+  [1m[35mLike Load (0.1ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered shared/_likes.html.erb (7.2ms)
+  Rendered tweets/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 74ms (Views: 70.2ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/tweets/1/like" for ::1 at 2016-05-25 19:41:23 -0400
+Processing by LikesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zsTdSCpfr+ko7c3wYj6iPgJQNSJ3LVyIwtwr65rM4oSAQK+E4I6wJqBqY5h5Msz/pWTJj3s6CfWjFteMQ4i2OA==", "tweet_id"=>"1"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mLike Load (0.2ms)[0m  SELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ? AND "likes"."user_id" = ?  [["tweet_id", 1], ["user_id", 2]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "likes" WHERE "likes"."id" = ?  [["id", 1]]
+  [1m[36m (1.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/tweets/1
+Completed 302 Found in 7ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/tweets/1" for ::1 at 2016-05-25 19:41:23 -0400
+Processing by TweetsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mTweet Load (0.1ms)[0m  SELECT  "tweets".* FROM "tweets" WHERE "tweets"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ? AND "likes"."user_id" = ?[0m  [["tweet_id", 1], ["user_id", 2]]
+  [1m[35m (0.0ms)[0m  SELECT COUNT(*) FROM "likes" WHERE "likes"."tweet_id" = ?  [["tweet_id", 1]]
+  [1m[36mLike Load (0.0ms)[0m  [1mSELECT "likes".* FROM "likes" WHERE "likes"."tweet_id" = ?[0m  [["tweet_id", 1]]
+  Rendered shared/_likes.html.erb (1.6ms)
+  Rendered tweets/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 53ms (Views: 51.1ms | ActiveRecord: 0.5ms)
