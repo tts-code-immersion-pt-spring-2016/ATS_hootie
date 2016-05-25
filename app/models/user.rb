@@ -7,11 +7,16 @@ class User < ActiveRecord::Base
   has_many :tweets
   has_many :relationships
   has_many :friends, through: :relationships
-<<<<<<< Updated upstream
-  
-=======
+  has_many :likes
 
->>>>>>> Stashed changes
+
+  has_many :inverse_relationships, :class_name => "Relationship", :foreign_key => "friend_id"
+  has_many :inverse_friends, :through => :inverse_relationships, :source => :user
+
   validates :username, presence: true, uniqueness: true
+
+  def likes?(tweet)
+  tweet.likes.where(user_id: id).any?
+  end
 
 end
