@@ -1,5 +1,4 @@
 class RelationshipsController < ApplicationController
-<<<<<<< Updated upstream
 
 
   def create
@@ -12,40 +11,13 @@ class RelationshipsController < ApplicationController
       redirect_to root_path
     end
 
-private
-
-    def relationship_params
-      params.require(:relationship).permit(:message, :user_id)
-    end
-
-end
-=======
-  def create
-     @relationship = current_user.relationships.build(friend_id: params[:friend_id])
-   if @relationship.save
-     flash[:notice] = "Followed successfully."
-     redirect_to profile_path(current_user.id)
-   else
-     flash[:notice] = "Unable to follow."
-     redirect_to root_path
-   end
-end
 
 private
 
      def relationship_params
        params.require (:relationship).permit (:user_id, :friend_id)
    end
-   def create
-       @relationship = current_user.relationships.build(friend_id: params[:friend_id])
-       if @relationship.save
-         flash[:notice] = "Followed successfully."
-         redirect_to profile_path(current_user.id)
-       else
-         flash[:notice] = "Unable to follow."
-         redirect_to root_path
-       end
-     end
+
 
      def destroy
        @relationship = current_user.relationships.find(params[:id])
@@ -53,11 +25,3 @@ private
        flash[:notice] = "No longer following."
        redirect_to tweets_path
      end
-
-
-     private
-
-       def relationship_params
-         params.require(:relationship).permit(:user_id, :friend_id)
-       end
->>>>>>> Stashed changes

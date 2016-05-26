@@ -1,21 +1,18 @@
 Rails.application.routes.draw do
 
+  get 'likes/create'
+
   resources :profiles, only: [:index, :show]
+  resources :tweets do
+    resource :like
+  end
 
-<<<<<<< Updated upstream
-  resources :tweets
-
-  resources :relationships
-
-=======
   resources :relationships
 
   # get "profiles/:id" => "profiles#show", as: :profiles
   #
   # get
 
-  resources :tweets
->>>>>>> Stashed changes
   root "tweets#index"
 
   devise_for :users
